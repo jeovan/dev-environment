@@ -1,0 +1,14 @@
+services:
+  php:
+    build: .
+    image: php:8.2-cli
+    volumes:
+      - ./:/var/www/html:rw
+    ports:
+      - 80:80
+volumes:
+  mariadb:
+    driver: local
+networks:
+  db:
+    driver: bridge
